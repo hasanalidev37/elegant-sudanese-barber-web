@@ -1,8 +1,10 @@
 
 import React from "react";
-import barberShopBg from "../../assets/barber-hero.jpg"; // We'll add this image later
 
 const Hero = () => {
+  // Using a placeholder URL for now
+  const barberShopBg = "/placeholder.svg"; // Using the available placeholder SVG
+
   return (
     <section
       className="min-h-[90vh] flex items-center relative overflow-hidden"
