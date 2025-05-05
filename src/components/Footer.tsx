@@ -1,7 +1,8 @@
 
 import React from "react";
-import { MapPin, Phone, Clock, Instagram, Facebook } from "lucide-react";
+import { MapPin, Clock, Instagram, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
+import { logo } from "../assets/index";
 
 const Footer = () => {
   return (
@@ -18,11 +19,15 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center gap-3 mb-3">
-              <Phone className="text-barber-gold shrink-0" size={20} />
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-barber-gold shrink-0">
+                <path d="M3 21l1.9-5.7a8.5 8.5 0 113.8 3.8z"></path>
+              </svg>
               <p>0545162003</p>
             </div>
             <div className="flex items-center gap-3 mb-3">
-              <Phone className="text-barber-gold shrink-0" size={20} />
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-barber-gold shrink-0">
+                <path d="M3 21l1.9-5.7a8.5 8.5 0 113.8 3.8z"></path>
+              </svg>
               <p>الواتساب: 00966530640121</p>
             </div>
           </div>
@@ -96,7 +101,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 text-center"
               >
-                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center social-icon">
+                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center hover:bg-barber-gold/20 transition-colors">
                   <Instagram size={20} />
                 </div>
                 <span className="text-sm">انستغرام</span>
@@ -107,7 +112,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 text-center"
               >
-                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center social-icon">
+                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center hover:bg-barber-gold/20 transition-colors">
                   {/* Simple TikTok text icon since we don't have a TikTok icon */}
                   <span className="text-sm font-bold">TT</span>
                 </div>
@@ -119,7 +124,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 text-center"
               >
-                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center social-icon">
+                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center hover:bg-barber-gold/20 transition-colors">
                   <Facebook size={20} />
                 </div>
                 <span className="text-sm">فيسبوك</span>
@@ -130,7 +135,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 text-center"
               >
-                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center social-icon">
+                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center hover:bg-barber-gold/20 transition-colors">
                   {/* Simple Snapchat text icon since we don't have a Snapchat icon */}
                   <span className="text-sm font-bold">SC</span>
                 </div>
@@ -142,7 +147,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 text-center"
               >
-                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center social-icon">
+                <div className="w-10 h-10 rounded-full border border-barber-gold flex items-center justify-center hover:bg-barber-gold/20 transition-colors">
                   {/* Simple Threads text icon since we don't have a Threads icon */}
                   <span className="text-sm font-bold">TH</span>
                 </div>
@@ -154,8 +159,11 @@ const Footer = () => {
                 href="https://wa.me/966530640121"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-button block text-center"
+                className="gold-button flex items-center justify-center gap-2"
               >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 21l1.9-5.7a8.5 8.5 0 113.8 3.8z"></path>
+                </svg>
                 احجز الآن عبر الواتساب
               </a>
             </div>

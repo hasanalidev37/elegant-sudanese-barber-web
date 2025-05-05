@@ -73,9 +73,9 @@ const Reviews = () => {
               مراجعات وشهادات العملاء
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in">
-              ما يقوله عملاؤنا عن حلاق السوداني الأنيق
+              ما يقوله عملاؤنا عن صالون السوداني الأنيق
             </p>
-            <div className="flex justify-center items-center gap-2 mt-6">
+            <div className="flex justify-center items-center gap-3 mt-6">
               <div className="flex">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
@@ -95,12 +95,14 @@ const Reviews = () => {
       {/* Reviews Section */}
       <section className="py-16 bg-barber-dark">
         <div className="container">
-          <h2 className="section-title mb-10">بعض آراء عملائنا</h2>
+          <h2 className="text-3xl md:text-4xl font-cairo text-barber-gold font-bold mb-10 text-center">
+            شهادات عملائنا
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((review, index) => (
               <div
                 key={review.id}
-                className="bg-barber-dark-light p-6 rounded-lg border border-barber-gold/30 hover:border-barber-gold/70 transition-all duration-300 animate-fade-in"
+                className="bg-barber-dark-light p-6 rounded-lg border border-barber-gold/30 hover:border-barber-gold/70 transition-all duration-300 animate-fade-in hover:shadow-xl hover:shadow-barber-gold/20"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex gap-1 mb-3">
@@ -115,7 +117,7 @@ const Reviews = () => {
                   ))}
                 </div>
                 <p className="text-gray-300 mb-6">"{review.text}"</p>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center border-t border-barber-gold/20 pt-4">
                   <h3 className="font-bold text-barber-gold">{review.name}</h3>
                   <span className="text-sm text-gray-400">{review.date}</span>
                 </div>

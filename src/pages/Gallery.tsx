@@ -1,6 +1,11 @@
 
 import React, { useState } from "react";
 import Layout from "../components/Layout";
+import { 
+  hairImage1, hairImage2, hairImage3, hairImage4, hairImage5,
+  beardImage1, beardImage2, beardImage3,
+  childrenServiceImage
+} from "../assets/index";
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -9,56 +14,56 @@ const Gallery = () => {
     {
       id: 1,
       category: "haircuts",
-      src: "https://placehold.co/600x800/23272C/CAB492?text=قصة+شعر+1",
+      src: hairImage1,
       alt: "قصة شعر 1",
     },
     {
       id: 2,
       category: "haircuts",
-      src: "https://placehold.co/600x800/23272C/CAB492?text=قصة+شعر+2",
+      src: hairImage2,
       alt: "قصة شعر 2",
     },
     {
       id: 3,
       category: "haircuts",
-      src: "https://placehold.co/600x800/23272C/CAB492?text=قصة+شعر+3",
+      src: hairImage3,
       alt: "قصة شعر 3",
     },
     {
       id: 4,
       category: "haircuts",
-      src: "https://placehold.co/600x800/23272C/CAB492?text=قصة+شعر+4",
+      src: hairImage4,
       alt: "قصة شعر 4",
     },
     {
       id: 5,
-      category: "beard",
-      src: "https://placehold.co/600x800/23272C/CAB492?text=تشذيب+لحية+1",
-      alt: "تشذيب لحية 1",
+      category: "haircuts",
+      src: hairImage5,
+      alt: "قصة شعر 5",
     },
     {
       id: 6,
       category: "beard",
-      src: "https://placehold.co/600x800/23272C/CAB492?text=تشذيب+لحية+2",
-      alt: "تشذيب لحية 2",
+      src: beardImage1,
+      alt: "تشذيب لحية 1",
     },
     {
       id: 7,
       category: "beard",
-      src: "https://placehold.co/600x800/23272C/CAB492?text=تشذيب+لحية+3",
-      alt: "تشذيب لحية 3",
+      src: beardImage2,
+      alt: "تشذيب لحية 2",
     },
     {
       id: 8,
-      category: "kids",
-      src: "https://placehold.co/600x800/23272C/CAB492?text=قصة+شعر+للأطفال+1",
-      alt: "قصة شعر للأطفال 1",
+      category: "beard",
+      src: beardImage3,
+      alt: "تشذيب لحية 3",
     },
     {
       id: 9,
       category: "kids",
-      src: "https://placehold.co/600x800/23272C/CAB492?text=قصة+شعر+للأطفال+2",
-      alt: "قصة شعر للأطفال 2",
+      src: childrenServiceImage,
+      alt: "قصة شعر للأطفال",
     },
   ];
 
@@ -90,9 +95,9 @@ const Gallery = () => {
           {/* Gallery Filter Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             <button
-              className={`px-6 py-2 rounded-full transition-colors ${
+              className={`px-6 py-3 rounded-full text-lg transition-colors duration-300 ${
                 activeTab === "all"
-                  ? "bg-barber-gold text-barber-dark"
+                  ? "bg-barber-gold text-barber-dark font-bold"
                   : "bg-barber-dark-light text-gray-300 hover:bg-barber-gold/20"
               }`}
               onClick={() => setActiveTab("all")}
@@ -100,9 +105,9 @@ const Gallery = () => {
               الكل
             </button>
             <button
-              className={`px-6 py-2 rounded-full transition-colors ${
+              className={`px-6 py-3 rounded-full text-lg transition-colors duration-300 ${
                 activeTab === "haircuts"
-                  ? "bg-barber-gold text-barber-dark"
+                  ? "bg-barber-gold text-barber-dark font-bold"
                   : "bg-barber-dark-light text-gray-300 hover:bg-barber-gold/20"
               }`}
               onClick={() => setActiveTab("haircuts")}
@@ -110,9 +115,9 @@ const Gallery = () => {
               قصات الشعر
             </button>
             <button
-              className={`px-6 py-2 rounded-full transition-colors ${
+              className={`px-6 py-3 rounded-full text-lg transition-colors duration-300 ${
                 activeTab === "beard"
-                  ? "bg-barber-gold text-barber-dark"
+                  ? "bg-barber-gold text-barber-dark font-bold"
                   : "bg-barber-dark-light text-gray-300 hover:bg-barber-gold/20"
               }`}
               onClick={() => setActiveTab("beard")}
@@ -120,9 +125,9 @@ const Gallery = () => {
               تصميمات اللحية
             </button>
             <button
-              className={`px-6 py-2 rounded-full transition-colors ${
+              className={`px-6 py-3 rounded-full text-lg transition-colors duration-300 ${
                 activeTab === "kids"
-                  ? "bg-barber-gold text-barber-dark"
+                  ? "bg-barber-gold text-barber-dark font-bold"
                   : "bg-barber-dark-light text-gray-300 hover:bg-barber-gold/20"
               }`}
               onClick={() => setActiveTab("kids")}

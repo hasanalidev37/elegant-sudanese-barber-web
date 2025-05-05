@@ -1,37 +1,32 @@
 
 import React from "react";
 import { Scissors } from "lucide-react";
+import { hairServiceImage, beardServiceImage, childrenServiceImage, skinCareServiceImage } from "../../assets/index";
 
 const Services = () => {
   const services = [
     {
       title: "حلاقة الشعر",
       description: "قصات عصرية وكلاسيكية تناسب جميع الأذواق",
-      price: "70 ريال",
+      image: hairServiceImage,
       icon: <Scissors className="text-barber-gold w-8 h-8" />,
     },
     {
       title: "تشذيب اللحية",
       description: "عناية فائقة وتصميم احترافي للحية",
-      price: "35 ريال",
+      image: beardServiceImage,
       icon: <Scissors className="text-barber-gold w-8 h-8" />,
     },
     {
       title: "حلاقة للأطفال",
       description: "خدمات خاصة ومناسبة للأطفال في أجواء مريحة",
-      price: "40 ريال",
+      image: childrenServiceImage,
       icon: <Scissors className="text-barber-gold w-8 h-8" />,
     },
     {
       title: "العناية بالبشرة",
       description: "تنظيف البشرة وإزالة الرؤوس السوداء",
-      price: "اتصل بنا",
-      icon: <Scissors className="text-barber-gold w-8 h-8" />,
-    },
-    {
-      title: "الحمام المغربي",
-      description: "تجربة مميزة للاسترخاء والعناية بالبشرة",
-      price: "اتصل بنا",
+      image: skinCareServiceImage,
       icon: <Scissors className="text-barber-gold w-8 h-8" />,
     },
   ];
@@ -40,36 +35,45 @@ const Services = () => {
     <section id="services" className="py-16 bg-barber-dark">
       <div className="container">
         <div className="text-center mb-10">
-          <h2 className="section-title inline-block">خدماتنا المميزة</h2>
-          <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-cairo font-bold text-barber-gold mb-6">
+            خدماتنا المميزة
+          </h2>
+          <p className="text-gray-300 mt-4 max-w-2xl mx-auto text-lg">
             نقدم في صالون السوداني الأنيق مجموعة متكاملة من خدمات الحلاقة والعناية
             الشخصية
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="service-card animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-barber-dark-light rounded-lg overflow-hidden border border-barber-gold/30 hover:border-barber-gold transition-all duration-500 group animate-fade-in shadow-lg hover:shadow-xl hover:shadow-barber-gold/20"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div>{service.icon}</div>
-                <div className="bg-barber-gold text-barber-dark px-3 py-1 rounded-full text-sm font-bold">
-                  {service.price}
-                </div>
+              <div className="relative h-60 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-barber-dark to-transparent opacity-50"></div>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-barber-gold">
-                {service.title}
-              </h3>
-              <p className="text-gray-300">{service.description}</p>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div>{service.icon}</div>
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-barber-gold">
+                  {service.title}
+                </h3>
+                <p className="text-gray-300">{service.description}</p>
+              </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-10">
-          <a href="#" className="gold-button">
+          <a href="/services" className="gold-button">
             عرض جميع الخدمات
           </a>
         </div>

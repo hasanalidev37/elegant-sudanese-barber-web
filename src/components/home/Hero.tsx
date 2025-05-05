@@ -1,15 +1,13 @@
 
 import React from "react";
+import { heroImage } from "../../assets/index";
 
 const Hero = () => {
-  // Using a placeholder URL for now
-  const barberShopBg = "/placeholder.svg"; // Using the available placeholder SVG
-
   return (
     <section
       className="min-h-[90vh] flex items-center relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${barberShopBg})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(${heroImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

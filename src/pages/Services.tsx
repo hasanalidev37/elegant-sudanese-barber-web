@@ -1,99 +1,115 @@
 
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
-import { Scissors, Check } from "lucide-react";
+import { Scissors } from "lucide-react";
+import { 
+  hairServiceImage, 
+  beardServiceImage, 
+  childrenServiceImage, 
+  skinCareServiceImage,
+  moroccanBathImage,
+  afterShaveProductImage,
+  hairCareProductImage,
+  beardCareProductImage,
+  trimmersProductImage 
+} from "../assets/index";
 
 const Services = () => {
-  const haircuts = [
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const services = [
     {
+      id: 1,
       title: "قصات الشعر العصرية",
       description:
         "نواكب أحدث صيحات الموضة العالمية في مجال قصات الشعر، ونقدم مجموعة متنوعة من القصات العصرية التي تتناسب مع مختلف أشكال الوجه وأنواع الشعر.",
-      price: "70 ريال",
+      image: hairServiceImage,
+      category: "haircuts",
     },
     {
+      id: 2,
       title: "قصات الشعر الكلاسيكية",
       description:
         "للباحثين عن الأناقة التقليدية، نقدم أفضل القصات الكلاسيكية بلمسات عصرية تمنحكم مظهراً أنيقاً ومرتباً يناسب جميع المناسبات.",
-      price: "70 ريال",
+      image: hairServiceImage,
+      category: "haircuts",
     },
     {
+      id: 3,
       title: "قصات شعر الأطفال",
       description:
         "نقدم خدمات حلاقة خاصة للأطفال في أجواء مريحة وودية، مع فريق متخصص في التعامل مع الأطفال لضمان تجربة ممتعة وخالية من الإزعاج.",
-      price: "40 ريال",
+      image: childrenServiceImage,
+      category: "haircuts",
     },
-  ];
-
-  const beardServices = [
     {
+      id: 4,
       title: "تشذيب وتصميم اللحية",
       description:
         "نقدم خدمات احترافية لتشذيب وتصميم اللحية بدقة عالية، مع مراعاة شكل الوجه وكثافة شعر اللحية لإبراز جمال ملامحكم.",
-      price: "35 ريال",
+      image: beardServiceImage,
+      category: "beard",
     },
     {
+      id: 5,
       title: "حلاقة اللحية الكاملة",
       description:
         "لمن يفضلون الوجه الأملس، نقدم خدمة حلاقة متقنة تضمن نعومة البشرة وحمايتها من التهيج.",
-      price: "25 ريال",
+      image: beardServiceImage,
+      category: "beard",
     },
     {
+      id: 6,
       title: "العناية باللحية",
       description:
         "خدمات متكاملة للعناية باللحية تشمل التنظيف العميق والترطيب واستخدام أفضل المنتجات والزيوت الطبيعية.",
-      price: "50 ريال",
+      image: beardServiceImage,
+      category: "beard",
     },
-  ];
-
-  const skinCareServices = [
     {
+      id: 7,
       title: "تنظيف البشرة",
       description:
         "خدمة متكاملة لتنظيف البشرة وإزالة الرؤوس السوداء وترطيب البشرة للحصول على بشرة نظيفة وصحية.",
-      price: "اتصل بنا",
+      image: skinCareServiceImage,
+      category: "skincare",
     },
     {
+      id: 8,
       title: "الحمام المغربي",
       description:
         "تجربة فريدة للاسترخاء والعناية بالبشرة، متوفرة في صالوننا لتمنحكم نظافة عميقة وبشرة متجددة.",
-      price: "اتصل بنا",
+      image: moroccanBathImage,
+      category: "skincare",
     },
   ];
 
   const products = [
     {
+      id: 1,
       title: "كريمات ما بعد الحلاقة",
-      image: "https://placehold.co/400x400/23272C/CAB492?text=كريم+ما+بعد+الحلاقة",
+      image: afterShaveProductImage,
     },
     {
+      id: 2,
       title: "منتجات العناية بالشعر",
-      image:
-        "https://placehold.co/400x400/23272C/CAB492?text=منتجات+العناية+بالشعر",
+      image: hairCareProductImage,
     },
     {
+      id: 3,
       title: "منتجات العناية باللحية",
-      image:
-        "https://placehold.co/400x400/23272C/CAB492?text=منتجات+العناية+باللحية",
+      image: beardCareProductImage,
     },
     {
+      id: 4,
       title: "ماكينات التنعيم",
-      image: "https://placehold.co/400x400/23272C/CAB492?text=ماكينات+التنعيم",
+      image: trimmersProductImage,
     },
   ];
 
-  const ServiceCard = ({ title, description, price }) => (
-    <div className="service-card">
-      <div className="flex items-center justify-between mb-4">
-        <Scissors className="text-barber-gold w-8 h-8" />
-        <div className="bg-barber-gold text-barber-dark px-3 py-1 rounded-full text-sm font-bold">
-          {price}
-        </div>
-      </div>
-      <h3 className="text-xl font-bold mb-2 text-barber-gold">{title}</h3>
-      <p className="text-gray-300">{description}</p>
-    </div>
-  );
+  const filteredServices = activeCategory === "all" 
+    ? services 
+    : services.filter(service => service.category === activeCategory);
 
   return (
     <Layout>
@@ -112,37 +128,77 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Haircuts Section */}
+      {/* Services Filter and Grid */}
       <section className="py-16 bg-barber-dark">
         <div className="container">
-          <h2 className="section-title mb-10">قصات الشعر</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {haircuts.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+            <button
+              className={`px-6 py-3 rounded-full text-lg transition-colors duration-300 ${
+                activeCategory === "all"
+                  ? "bg-barber-gold text-barber-dark font-bold"
+                  : "bg-barber-dark-light text-gray-300 hover:bg-barber-gold/20"
+              }`}
+              onClick={() => setActiveCategory("all")}
+            >
+              جميع الخدمات
+            </button>
+            <button
+              className={`px-6 py-3 rounded-full text-lg transition-colors duration-300 ${
+                activeCategory === "haircuts"
+                  ? "bg-barber-gold text-barber-dark font-bold"
+                  : "bg-barber-dark-light text-gray-300 hover:bg-barber-gold/20"
+              }`}
+              onClick={() => setActiveCategory("haircuts")}
+            >
+              قصات الشعر
+            </button>
+            <button
+              className={`px-6 py-3 rounded-full text-lg transition-colors duration-300 ${
+                activeCategory === "beard"
+                  ? "bg-barber-gold text-barber-dark font-bold"
+                  : "bg-barber-dark-light text-gray-300 hover:bg-barber-gold/20"
+              }`}
+              onClick={() => setActiveCategory("beard")}
+            >
+              خدمات اللحية
+            </button>
+            <button
+              className={`px-6 py-3 rounded-full text-lg transition-colors duration-300 ${
+                activeCategory === "skincare"
+                  ? "bg-barber-gold text-barber-dark font-bold"
+                  : "bg-barber-dark-light text-gray-300 hover:bg-barber-gold/20"
+              }`}
+              onClick={() => setActiveCategory("skincare")}
+            >
+              العناية بالبشرة
+            </button>
           </div>
-        </div>
-      </section>
 
-      {/* Beard Services */}
-      <section className="py-16 bg-gradient-to-b from-barber-dark to-barber-dark-light">
-        <div className="container">
-          <h2 className="section-title mb-10">خدمات اللحية</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {beardServices.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skin Care Services */}
-      <section className="py-16 bg-barber-dark">
-        <div className="container">
-          <h2 className="section-title mb-10">خدمات العناية بالبشرة</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skinCareServices.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+            {filteredServices.map((service, index) => (
+              <div
+                key={service.id}
+                className="bg-barber-dark-light rounded-lg overflow-hidden border border-barber-gold/30 hover:border-barber-gold transition-all duration-500 group animate-fade-in shadow-lg hover:shadow-xl hover:shadow-barber-gold/20"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative h-60 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-barber-dark to-transparent opacity-50"></div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <Scissors className="text-barber-gold w-8 h-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-barber-gold">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-300">{service.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -151,24 +207,32 @@ const Services = () => {
       {/* Products */}
       <section className="py-16 bg-gradient-to-b from-barber-dark-light to-barber-dark">
         <div className="container">
-          <h2 className="section-title mb-10">المنتجات المتوفرة</h2>
-          <p className="text-gray-300 mb-8 max-w-3xl">
-            نوفر في صالون حلاق السوداني الأنيق مجموعة متميزة من المنتجات المختارة بعناية:
-          </p>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-cairo font-bold text-barber-gold mb-6">
+              المنتجات المتوفرة
+            </h2>
+            <p className="text-gray-300 mb-8 max-w-3xl mx-auto">
+              نوفر في صالون السوداني الأنيق مجموعة متميزة من المنتجات المختارة بعناية:
+            </p>
+          </div>
+          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {products.map((product, index) => (
               <div
-                key={index}
-                className="bg-barber-dark rounded-lg overflow-hidden border border-barber-gold/30 hover:border-barber-gold transition-all duration-300 animate-fade-in"
+                key={product.id}
+                className="bg-barber-dark rounded-lg overflow-hidden border border-barber-gold/30 hover:border-barber-gold transition-all duration-300 group animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-48 object-cover"
-                />
+                <div className="relative overflow-hidden h-48 sm:h-64">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-barber-dark to-transparent opacity-50"></div>
+                </div>
                 <div className="p-4">
-                  <h3 className="text-barber-gold font-cairo font-bold">{product.title}</h3>
+                  <h3 className="text-barber-gold font-cairo font-bold text-center">{product.title}</h3>
                 </div>
               </div>
             ))}
