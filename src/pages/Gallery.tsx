@@ -1,8 +1,8 @@
 
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import { 
-  hairImage1, hairImage2, hairImage3, hairImage4, hairImage5,
+import {
+  hairImage1, hairImage2, hairImage3, hairImage5, // Removed hairImage4
   beardImage1, beardImage2, beardImage3,
   childrenServiceImage
 } from "../assets/index";
@@ -29,12 +29,7 @@ const Gallery = () => {
       src: hairImage3,
       alt: "قصة شعر 3",
     },
-    {
-      id: 4,
-      category: "haircuts",
-      src: hairImage4,
-      alt: "قصة شعر 4",
-    },
+    // Removed image with id: 4 (hairImage4) as it's now a service card image
     {
       id: 5,
       category: "haircuts",

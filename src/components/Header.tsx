@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Menu, X, Scissors } from "lucide-react";
 
 const Header = () => {
@@ -14,10 +14,12 @@ const Header = () => {
     <header className="bg-barber-dark border-b border-barber-gold/30 sticky top-0 z-50">
       <div className="container py-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <Scissors className="text-barber-gold h-8 w-8" />
-          <Link to="/" className="text-2xl font-cairo font-bold text-barber-gold">
+          <div className="rounded-full bg-white h-10 w-10 flex items-center justify-center">
+            <img src="/lovable-uploads/logo.png" alt="Salon Logo" className="h-8 w-8" />
+          </div>
+          <NavLink to="/" className="text-2xl font-cairo font-bold text-barber-gold">
             صالون السوداني الأنيق
-          </Link>
+          </NavLink>
         </div>
 
         {/* Mobile menu button */}
@@ -27,24 +29,24 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-6">
-          <Link to="/" className="text-white hover:text-barber-gold transition-colors">
+          <NavLink to="/" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`}>
             الرئيسية
-          </Link>
-          <Link to="/about" className="text-white hover:text-barber-gold transition-colors">
+          </NavLink>
+          <NavLink to="/about" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`}>
             نبذة عنا
-          </Link>
-          <Link to="/services" className="text-white hover:text-barber-gold transition-colors">
+          </NavLink>
+          <NavLink to="/services" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`}>
             خدماتنا
-          </Link>
-          <Link to="/gallery" className="text-white hover:text-barber-gold transition-colors">
+          </NavLink>
+          <NavLink to="/gallery" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`}>
             معرض الأعمال
-          </Link>
-          <Link to="/faq" className="text-white hover:text-barber-gold transition-colors">
+          </NavLink>
+          <NavLink to="/faq" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`}>
             الأسئلة الشائعة
-          </Link>
-          <Link to="/reviews" className="text-white hover:text-barber-gold transition-colors">
+          </NavLink>
+          <NavLink to="/reviews" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`}>
             مراجعات العملاء
-          </Link>
+          </NavLink>
           <a 
             href="https://wa.me/966530640121" 
             target="_blank" 
@@ -60,24 +62,24 @@ const Header = () => {
           <div className="fixed inset-0 bg-barber-dark z-40 lg:hidden animate-fade-in">
             <div className="container py-20">
               <nav className="flex flex-col items-center gap-6 text-lg">
-                <Link to="/" className="text-white hover:text-barber-gold transition-colors" onClick={toggleMenu}>
+                <NavLink to="/" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`} onClick={toggleMenu}>
                   الرئيسية
-                </Link>
-                <Link to="/about" className="text-white hover:text-barber-gold transition-colors" onClick={toggleMenu}>
+                </NavLink>
+                <NavLink to="/about" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`} onClick={toggleMenu}>
                   نبذة عنا
-                </Link>
-                <Link to="/services" className="text-white hover:text-barber-gold transition-colors" onClick={toggleMenu}>
+                </NavLink>
+                <NavLink to="/services" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`} onClick={toggleMenu}>
                   خدماتنا
-                </Link>
-                <Link to="/gallery" className="text-white hover:text-barber-gold transition-colors" onClick={toggleMenu}>
+                </NavLink>
+                <NavLink to="/gallery" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`} onClick={toggleMenu}>
                   معرض الأعمال
-                </Link>
-                <Link to="/faq" className="text-white hover:text-barber-gold transition-colors" onClick={toggleMenu}>
+                </NavLink>
+                <NavLink to="/faq" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`} onClick={toggleMenu}>
                   الأسئلة الشائعة
-                </Link>
-                <Link to="/reviews" className="text-white hover:text-barber-gold transition-colors" onClick={toggleMenu}>
+                </NavLink>
+                <NavLink to="/reviews" className={({ isActive }) => `${isActive ? 'text-barber-gold' : 'text-white'} hover:text-barber-gold transition-colors`} onClick={toggleMenu}>
                   مراجعات العملاء
-                </Link>
+                </NavLink>
                 <a 
                   href="https://wa.me/966530640121" 
                   target="_blank" 

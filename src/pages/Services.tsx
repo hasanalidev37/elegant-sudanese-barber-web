@@ -2,16 +2,19 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Scissors } from "lucide-react";
-import { 
-  hairServiceImage, 
-  beardServiceImage, 
-  childrenServiceImage, 
+import {
+  hairServiceImage,
+  beardServiceImage,
+  childrenServiceImage,
   skinCareServiceImage,
   moroccanBathImage,
   afterShaveProductImage,
   hairCareProductImage,
   beardCareProductImage,
-  trimmersProductImage 
+  trimmersProductImage,
+  hairImage5, // Added hairImage5 for classic haircuts card
+  hairImage3, // Added hairImage3 for full beard shave card
+  beardImage2 // Added beardImage2 for beard care card
 } from "../assets/index";
 
 const Services = () => {
@@ -31,7 +34,7 @@ const Services = () => {
       title: "قصات الشعر الكلاسيكية",
       description:
         "للباحثين عن الأناقة التقليدية، نقدم أفضل القصات الكلاسيكية بلمسات عصرية تمنحكم مظهراً أنيقاً ومرتباً يناسب جميع المناسبات.",
-      image: hairServiceImage,
+      image: hairImage5, // Changed from hairServiceImage to hairImage5
       category: "haircuts",
     },
     {
@@ -55,7 +58,7 @@ const Services = () => {
       title: "حلاقة اللحية الكاملة",
       description:
         "لمن يفضلون الوجه الأملس، نقدم خدمة حلاقة متقنة تضمن نعومة البشرة وحمايتها من التهيج.",
-      image: beardServiceImage,
+      image: hairImage3, // Changed from beardServiceImage to hairImage3
       category: "beard",
     },
     {
@@ -63,7 +66,7 @@ const Services = () => {
       title: "العناية باللحية",
       description:
         "خدمات متكاملة للعناية باللحية تشمل التنظيف العميق والترطيب واستخدام أفضل المنتجات والزيوت الطبيعية.",
-      image: beardServiceImage,
+      image: beardImage2, // Changed from beardServiceImage to beardImage2
       category: "beard",
     },
     {
@@ -190,9 +193,6 @@ const Services = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-barber-dark to-transparent opacity-50"></div>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <Scissors className="text-barber-gold w-8 h-8" />
-                  </div>
                   <h3 className="text-xl font-bold mb-3 text-barber-gold">
                     {service.title}
                   </h3>

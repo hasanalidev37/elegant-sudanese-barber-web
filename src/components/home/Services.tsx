@@ -9,25 +9,21 @@ const Services = () => {
       title: "حلاقة الشعر",
       description: "قصات عصرية وكلاسيكية تناسب جميع الأذواق",
       image: hairServiceImage,
-      icon: <Scissors className="text-barber-gold w-8 h-8" />,
     },
     {
       title: "تشذيب اللحية",
       description: "عناية فائقة وتصميم احترافي للحية",
       image: beardServiceImage,
-      icon: <Scissors className="text-barber-gold w-8 h-8" />,
     },
     {
       title: "حلاقة للأطفال",
       description: "خدمات خاصة ومناسبة للأطفال في أجواء مريحة",
       image: childrenServiceImage,
-      icon: <Scissors className="text-barber-gold w-8 h-8" />,
     },
     {
       title: "العناية بالبشرة",
       description: "تنظيف البشرة وإزالة الرؤوس السوداء",
       image: skinCareServiceImage,
-      icon: <Scissors className="text-barber-gold w-8 h-8" />,
     },
   ];
 
@@ -60,9 +56,6 @@ const Services = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-barber-dark to-transparent opacity-50"></div>
               </div>
               <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div>{service.icon}</div>
-                </div>
                 <h3 className="text-xl font-bold mb-2 text-barber-gold">
                   {service.title}
                 </h3>
